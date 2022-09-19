@@ -42,41 +42,39 @@ class HomePage extends StatelessWidget {
           ),
 
           // Safe Area
-          child: SafeArea(
-            child: Column(
-              // Alignment
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Column(
+            // Alignment
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-              children: [
-                // Title
-                Text(
-                  "Jokenpo",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: height * .05,
-                    fontWeight: FontWeight.bold,
-                  ),
+            children: [
+              // Title
+              Text(
+                "Jokenpo",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: height * .05,
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
 
-                // Bot choice
-                BotImage(
-                  size: size,
-                ),
+              // Bot choice
+              BotImage(
+                size: size,
+              ),
 
-                // Actions (user choice)
-                ActionBox(size: size),
+              // Actions (user choice)
+              ActionBox(size: size),
 
-                // Game Result
-                ResultText(
-                  size: size,
-                ),
+              // Game Result
+              ResultText(
+                size: size,
+              ),
 
-                // Score
-                ScoreBox(
-                  size: size,
-                ),
-              ],
-            ),
+              // Score
+              ScoreBox(
+                size: size,
+              ),
+            ],
           ),
         ),
       ),

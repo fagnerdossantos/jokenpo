@@ -1,16 +1,29 @@
-# jokenpo
+# JOKENPO
 
-A new Flutter project.
+A little unique Jokenpo game where the player can select from a wide range of activities. <br>
+Made using Flutter.
 
-## Getting Started
+## Actions
 
-This project is a starting point for a Flutter application.
+- Rock
+- Paper
+- Scissor
+- Fire
+- Dragon
+- Water
+- Lightning
+- Wind
 
-A few resources to get you started if this is your first Flutter project:
+## Running the application
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+In order to run the app you have to add the dependencies  
+Run the command:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter pub get
+```
+
+## Video
+
+## Specifications
+Packages **provider: 6.0.3**

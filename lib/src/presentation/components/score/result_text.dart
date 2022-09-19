@@ -12,17 +12,16 @@ class ResultText extends StatelessWidget {
   Widget build(BuildContext context) {
     // Size
     final double height = size.height;
-    final double width = size.width;
 
     // Controller
     final controller = context.watch<GameLogicController>();
 
-    return SizedBox(
-      // Size
-      height: height * .2,
-      width: width * .9,
-
-      child: Center(
+    return Padding(
+      padding: const EdgeInsets.only(
+        right: 8,
+        left: 8,
+      ),
+      child: FittedBox(
         child: Text(
           controller.status,
           style: TextStyle(
