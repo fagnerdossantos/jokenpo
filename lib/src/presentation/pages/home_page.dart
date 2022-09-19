@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:jokenpo/src/logic/enums/game_enum.dart';
-import 'package:jokenpo/src/logic/models/game_logic_model.dart';
 import 'package:jokenpo/src/presentation/components/action/action_box.dart';
 import 'package:jokenpo/src/presentation/components/bot/bot_image.dart';
+import 'package:jokenpo/src/presentation/components/score/result_text.dart';
 import 'package:jokenpo/src/presentation/components/score/score_box.dart';
-import 'package:jokenpo/src/presentation/components/score/score_result.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -61,24 +59,16 @@ class HomePage extends StatelessWidget {
                 ),
 
                 // Bot choice
-                const BotImage(),
+                BotImage(
+                  size: size,
+                ),
 
                 // Actions (user choice)
                 ActionBox(size: size),
 
                 // Game Result
-                Scoreresult(
+                ResultText(
                   size: size,
-                ),
-
-                ElevatedButton(
-                  onPressed: () {
-                    final controller = GameLogicModel();
-                    controller.userChoice = GameEnum.rock;
-
-                    controller.result();
-                  },
-                  child: const Text("Chicar"),
                 ),
 
                 // Score
@@ -93,14 +83,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-List<dynamic> imagesLIst = [
-  ["Pedra", "assets/images/rock.png"],
-  ["Papel", "assets/images/paper.png"],
-  ["Tesoura", "assets/images/scissor.png"],
-  ["Dragão", "assets/images/dragon.png"],
-  ["Fogo", "assets/images/fire.png"],
-  ["Relâmpago", "assets/images/lightning.png"],
-  ["Água", "assets/images/water.png"],
-  ["Vento", "assets/images/wind.png"],
-];

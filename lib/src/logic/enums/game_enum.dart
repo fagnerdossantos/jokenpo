@@ -1,15 +1,16 @@
 enum GameEnum {
-  rock(label: "Pedra"),
-  paper(label: "Papel"),
-  scissor(label: "Tesoura"),
-  dragon(label: "Dragão"),
-  fire(label: "Fogo"),
-  lightning(label: "Relâmpago"),
-  water(label: "Água"),
-  wind(label: "Vento");
+  rock(label: "Pedra", path: "assets/images/rock.png"),
+  paper(label: "Papel", path: "assets/images/paper.png"),
+  scissor(label: "Tesoura", path: "assets/images/scissor.png"),
+  dragon(label: "Dragão", path: "assets/images/dragon.png"),
+  fire(label: "Fogo", path: "assets/images/fire.png"),
+  lightning(label: "Relâmpago", path: "assets/images/lightning.png"),
+  water(label: "Água", path: "assets/images/water.png"),
+  wind(label: "Vento", path: "assets/images/wind.png");
 
   final String label;
-  const GameEnum({required this.label});
+  final String path;
+  const GameEnum({required this.label, required this.path});
 }
 
 // LOGIC

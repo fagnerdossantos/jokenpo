@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:jokenpo/src/presentation/pages/home_page.dart';
+import 'package:jokenpo/src/logic/enums/game_enum.dart';
 
 class ActionAvatar extends StatelessWidget {
   final Size size;
@@ -27,7 +27,7 @@ class ActionAvatar extends StatelessWidget {
         children: [
           // Image Label
           Text(
-            imagesLIst[index][0],
+            GameEnum.values[index].label,
             style: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class ActionAvatar extends StatelessWidget {
           Image(
             height: height * 0.13,
             image: AssetImage(
-              imagesLIst[index][1],
+              GameEnum.values[index].path,
             ),
           ),
         ],

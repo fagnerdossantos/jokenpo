@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import 'package:jokenpo/src/logic/controllers/score_controller.dart';
+
 class Score extends StatelessWidget {
   final Size size;
   final int index;
@@ -15,8 +19,13 @@ class Score extends StatelessWidget {
     // Size
     final double height = size.height;
 
+    // Controller
+    final controller = context.watch<ScoreController>();
+
     return Text(
-      index == 0 ? "Você: 3" : "Bot: 1",
+      index == 0
+          ? "Você: ${controller.userScore}"
+          : "Bot: ${controller.botScore}",
       style: TextStyle(
         fontSize: height * .03,
         fontWeight: FontWeight.bold,
