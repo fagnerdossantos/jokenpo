@@ -1,82 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:jokenpo/src/logic/bloc/game_bloc.dart';
+import 'package:jokenpo/src/logic/models/game_stats_model.dart';
 
-import 'package:jokenpo/src/presentation/components/action/action_box.dart';
+import 'package:jokenpo/src/presentation/components/action/actions_container.dart';
 import 'package:jokenpo/src/presentation/components/bot/bot_image.dart';
 import 'package:jokenpo/src/presentation/components/score/result_text.dart';
 import 'package:jokenpo/src/presentation/components/score/score_box.dart';
+import 'package:jokenpo/src/presentation/models/background_base_model.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final GameState state;
+  const HomePage({Key? key, required this.state}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Get the Screen Size
     final Size size = MediaQuery.of(context).size;
-    final double height = size.height;
-    final double width = size.width;
 
-    return Scaffold(
-      // Use the entire screen
-      body: SizedBox(
-        // Size
-        height: height,
-        width: width,
+    final GameStatsModel controller = state.stats;
 
-        child: DecoratedBox(
-          decoration: const BoxDecoration(
-            // Gradient
-            gradient: LinearGradient(
-              // Alignment
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+    return BackgroundBaseModel(
+      size: size,
 
-              // Colors
-              colors: [
-                Colors.pink,
-                Colors.white,
-                Colors.blue,
-                Colors.purpleAccent,
-                Colors.purple,
-              ],
-            ),
+      //
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          // Bot choice
+          BotImage(
+            size: size,
+            bot: controller.botChoice,
           ),
 
-          // Safe Area
-          child: Column(
-            // Alignment
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-            children: [
-              // Title
-              Text(
-                "Jokenpo",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: height * .05,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              // Bot choice
-              BotImage(
-                size: size,
-              ),
-
-              // Actions (user choice)
-              ActionBox(size: size),
-
-              // Game Result
-              ResultText(
-                size: size,
-              ),
-
-              // Score
-              ScoreBox(
-                size: size,
-              ),
-            ],
+          // Actions (user choice)
+          ActionsContainer(
+            size: size,
+            state: state,
           ),
-        ),
+
+          // Game Result
+          ResultText(
+            size: size,
+            result: controller.message,
+          ),
+
+          // Score
+          ScoreBox(
+            size: size,
+            user: controller.userScore,
+            bot: controller.botScore,
+          ),
+        ],
       ),
     );
   }

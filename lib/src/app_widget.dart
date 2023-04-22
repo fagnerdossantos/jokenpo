@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-
-import 'package:provider/provider.dart';
-
-import 'package:jokenpo/src/logic/controllers/game_logic_controller.dart';
-import 'package:jokenpo/src/logic/controllers/score_controller.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jokenpo/src/logic/bloc/game_bloc.dart';
+import 'package:jokenpo/src/logic/controllers/bot_choice_viewmodel.dart';
+import 'package:jokenpo/src/logic/controllers/game_logic_viewmodel.dart';
 import 'package:jokenpo/src/logic/models/bot_choice_model.dart';
 import 'package:jokenpo/src/logic/models/game_logic_model.dart';
-import 'package:jokenpo/src/presentation/pages/home_page.dart';
+import 'package:jokenpo/src/presentation/pages/page_builder.dart';
+
+import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -15,30 +16,32 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // Models
+        // Model
+        Provider(create: (_) => BotChoiceModel()),
+        Provider(create: (_) => GameLogicModel()),
+
+        // ViewModel
         Provider(
-          create: (_) => GameLogicModel(),
-        ),
+            create: (context) =>
+                BotChoiceViewmodel(context.read<BotChoiceModel>())),
+        Provider(
+            create: (context) =>
+                GameLogicViewmodel(context.read<GameLogicModel>())),
 
-        ChangeNotifierProvider(
-          create: (_) => BotChoiceModel(),
-        ),
-
-        // Controllers
-        ChangeNotifierProvider(
-          create: (_) => ScoreController(),
-        ),
-
-        ChangeNotifierProvider(
-          create: (context) => GameLogicController(
-            context.read<GameLogicModel>(),
-            context.read<BotChoiceModel>(),
-            context.read<ScoreController>(),
+        // Bloc
+        BlocProvider(
+          create: (context) => GameBloc(
+            context.read<BotChoiceViewmodel>(),
+            context.read<GameLogicViewmodel>(),
           ),
-        ),
+        )
       ],
-      child: const MaterialApp(
-        home: HomePage(),
+      child: MaterialApp(
+        home: const PageBuilder(),
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.deepPurple,
+        ),
         debugShowCheckedModeBanner: false,
       ),
     );

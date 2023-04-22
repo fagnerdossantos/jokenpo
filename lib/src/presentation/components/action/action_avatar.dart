@@ -18,8 +18,16 @@ class ActionAvatar extends StatelessWidget {
     final double height = size.height;
 
     // Avatar
-    return CircleAvatar(
-      backgroundColor: Colors.deepPurpleAccent,
+    return Card(
+      // Circular Shape
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          50,
+        ),
+      ),
+
+      elevation: 3,
+
       child: Column(
         // Alignment
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -27,7 +35,7 @@ class ActionAvatar extends StatelessWidget {
         children: [
           // Image Label
           Text(
-            GameEnum.values[index].label,
+            GameEnum.values[index].name,
             style: const TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
