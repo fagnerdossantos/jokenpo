@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jokenpo/src/logic/bloc/game_bloc.dart';
-import 'package:jokenpo/src/logic/models/game_stats_model.dart';
+import 'package:jokenpo/src/logic/models/game_status_model.dart';
 
 import 'package:jokenpo/src/presentation/components/action/actions_container.dart';
 import 'package:jokenpo/src/presentation/components/bot/bot_image.dart';
@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     // Get the Screen Size
     final Size size = MediaQuery.of(context).size;
 
-    final GameStatsModel controller = state.stats;
+    final GameStatusModel controller = state.stats;
 
     return BackgroundBaseModel(
       size: size,
@@ -45,7 +45,7 @@ class HomePage extends StatelessWidget {
           ),
 
           // Score
-          ScoreBox(
+          ScoreBuilder(
             size: size,
             user: controller.userScore,
             bot: controller.botScore,

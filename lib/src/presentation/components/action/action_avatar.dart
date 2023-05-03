@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:jokenpo/src/logic/enums/game_enum.dart';
+import 'package:jokenpo/src/logic/models/game_elements.dart';
+import 'package:jokenpo/utils/consts.dart';
 
 class ActionAvatar extends StatelessWidget {
   final Size size;
@@ -20,11 +21,7 @@ class ActionAvatar extends StatelessWidget {
     // Avatar
     return Card(
       // Circular Shape
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          50,
-        ),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: RoundedShape.large),
 
       elevation: 3,
 
@@ -35,18 +32,15 @@ class ActionAvatar extends StatelessWidget {
         children: [
           // Image Label
           Text(
-            GameEnum.values[index].name,
-            style: const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
+            GameElements.values[index].name,
+            style: FontsStyle.small,
           ),
 
           // Image
           Image(
             height: height * 0.13,
             image: AssetImage(
-              GameEnum.values[index].path,
+              GameElements.values[index].path,
             ),
           ),
         ],

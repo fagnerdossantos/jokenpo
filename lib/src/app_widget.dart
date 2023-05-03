@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jokenpo/src/logic/bloc/game_bloc.dart';
-import 'package:jokenpo/src/logic/controllers/bot_choice_viewmodel.dart';
-import 'package:jokenpo/src/logic/controllers/game_logic_viewmodel.dart';
-import 'package:jokenpo/src/logic/models/bot_choice_model.dart';
-import 'package:jokenpo/src/logic/models/game_logic_model.dart';
+import 'package:jokenpo/src/logic/providers/provider_list.dart';
 import 'package:jokenpo/src/presentation/pages/page_builder.dart';
+import 'package:jokenpo/utils/consts.dart';
 
 import 'package:provider/provider.dart';
 
@@ -15,33 +11,20 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        // Model
-        Provider(create: (_) => BotChoiceModel()),
-        Provider(create: (_) => GameLogicModel()),
+      // Providers
+      providers: providerList,
 
-        // ViewModel
-        Provider(
-            create: (context) =>
-                BotChoiceViewmodel(context.read<BotChoiceModel>())),
-        Provider(
-            create: (context) =>
-                GameLogicViewmodel(context.read<GameLogicModel>())),
-
-        // Bloc
-        BlocProvider(
-          create: (context) => GameBloc(
-            context.read<BotChoiceViewmodel>(),
-            context.read<GameLogicViewmodel>(),
-          ),
-        )
-      ],
       child: MaterialApp(
-        home: const PageBuilder(),
+        initialRoute: "/",
+
+        routes: {"/": (context) => const PageBuilder()},
+
+        // Theming
         theme: ThemeData(
           useMaterial3: true,
-          colorSchemeSeed: Colors.deepPurple,
+          colorSchemeSeed: deepPurple,
         ),
+
         debugShowCheckedModeBanner: false,
       ),
     );

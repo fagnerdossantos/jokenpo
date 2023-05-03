@@ -1,15 +1,15 @@
-import 'package:jokenpo/src/logic/enums/game_enum.dart';
+import 'package:jokenpo/src/logic/models/game_elements.dart';
 
-class GameStatsModel {
+class GameStatusModel {
   final int userScore;
-  final GameEnum? userChoice;
+  final GameElements? userChoice;
 
-  final GameEnum? botChoice;
+  final GameElements? botChoice;
   final int botScore;
 
   final String message;
 
-  GameStatsModel({
+  GameStatusModel({
     required this.userScore,
     required this.userChoice,
     required this.botChoice,

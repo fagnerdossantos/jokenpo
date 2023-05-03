@@ -10,7 +10,7 @@ class PageBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GameBloc, GameState>(
       builder: (context, state) {
-        if (state is GameInitial || state is GameWin) {
+        if (state is GameInitial || state is GameResult) {
           return HomePage(
             state: state,
           );

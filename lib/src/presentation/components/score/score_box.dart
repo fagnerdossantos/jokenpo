@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:jokenpo/src/presentation/components/score/score.dart';
 
-class ScoreBox extends StatelessWidget {
+class ScoreBuilder extends StatelessWidget {
   final Size size;
   final int user;
   final int bot;
-  const ScoreBox({
+  const ScoreBuilder({
     Key? key,
     required this.size,
     required this.user,
@@ -15,21 +15,17 @@ class ScoreBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
+    Map<String, int> score = {"User": user, "Bot": bot};
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        // User Score
-        Score(
-          size: size,
-          score: user,
-        ),
-
-        // Bot Score
-        Score(
-          size: size,
-          score: bot,
-        ),
-      ],
+      children: score.entries
+          .map((e) => Score(
+                id: e.key,
+                score: e.value,
+              ))
+          .toList(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jokenpo/utils/consts.dart';
 
 class ResultText extends StatelessWidget {
   final Size size;
@@ -9,22 +10,17 @@ class ResultText extends StatelessWidget {
   Widget build(BuildContext context) {
     // Size
     final double height = size.height;
+    final double width = size.width;
 
-    return Padding(
-      padding: const EdgeInsets.only(
-        right: 8,
-        left: 8,
-      ),
+    return SizedBox(
+      // Sizing
+      height: height * .05,
+      width: width,
 
-      //
-      child: FittedBox(
-        child: Text(
-          result,
-          style: TextStyle(
-            fontSize: height * .03,
-          ),
-          textAlign: TextAlign.center,
-        ),
+      child: Text(
+        result,
+        style: FontsStyle.medium,
+        textAlign: TextAlign.center,
       ),
     );
   }

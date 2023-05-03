@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:jokenpo/src/logic/enums/game_enum.dart';
+import 'package:jokenpo/src/logic/models/game_elements.dart';
+import 'package:jokenpo/utils/consts.dart';
 
 class BotImage extends StatelessWidget {
   final Size size;
-  final GameEnum? bot;
+  final GameElements? bot;
   const BotImage({
     Key? key,
     required this.size,
@@ -15,9 +16,7 @@ class BotImage extends StatelessWidget {
     return Card(
       // Circular Shape
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(
-          20,
-        ),
+        borderRadius: RoundedShape.small
       ),
 
       elevation: 3,

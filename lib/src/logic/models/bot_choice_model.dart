@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:jokenpo/src/logic/enums/game_enum.dart';
+import 'package:jokenpo/src/logic/models/game_elements.dart';
 
 class BotChoiceModel {
-  GameEnum randBot() =>
-      GameEnum.values[Random().nextInt(GameEnum.values.length)];
+  GameElements randBot() =>
+      GameElements.values[Random().nextInt(GameElements.values.length)];
 }
