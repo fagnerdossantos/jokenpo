@@ -6,7 +6,7 @@ JOKENPO is a Flutter app that lets users play the popular game of Rock, Paper, S
 
 In order to run the app, you need to add the dependencies required by the project. Run the following command:
 
-``` dart
+``` bash
 flutter pub get
 ```
 
@@ -29,6 +29,7 @@ The JOKENPO app uses the following libraries:
 
 Check out the following video to see the JOKENPO app in action:
 
-[https://user-images.githubusercontent.com/61123877/191089892-e01c338b-b6d2-4e5e-9eb4-07333710a14e.mp4](https://user-images.githubusercontent.com/61123877/191089892-e01c338b-b6d2-4e5e-9eb4-07333710a14e.mp4)
+https://user-images.githubusercontent.com/61123877/235994033-5d0958f3-fad8-4501-bf41-129e11e4b945.mp4
+
 
 I hope you enjoy playing JOKENPO!
