@@ -22,8 +22,8 @@ The JOKENPO app was developed using the MVVC architecture, which stands for Mode
 
 The JOKENPO app uses the following libraries:
 
--   Provider: A library that provides a simple way to manage state in a Flutter app.
--   BLoC: A library that separates business logic from presentation in Flutter apps.
+-   Provider.
+-   BLoC.
 
 ## Video
 
