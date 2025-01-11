@@ -1,5 +1,6 @@
-
 # JokenPo
+
+## 🌐 Try it in Web [JokenPo](https://fagnerdossantos.github.io/jokenpo/)
 
 **JokenPo** is a casual game inspired by the classic "Rock, Paper, Scissors," but with a unique twist. The game features additional elements, animations, and modern functionalities. It was developed as a personal project to practice and improve Flutter development skills, focusing on architecture, state management, and animations.
 
@@ -33,7 +34,8 @@ Players choose one element, and the bot makes a random choice. The winner is det
 -   Built with Clean Code principles and architectural patterns.
     
 
-## 🎮 Screenshots (Optional)
+## 🎮 Screenshot
+![jokenPo](https://github.com/user-attachments/assets/1febb71d-86af-4abc-8727-f16ccf26aebb)
 
 
 ## 📚 License
