@@ -1,35 +1,41 @@
-# JOKENPO
 
-JOKENPO is a Flutter app that lets users play the popular game of Rock, Paper, Scissors with a unique twist. It includes a wide range of additional actions, such as Fire, Dragon, Water, Lightning, and Wind. The app was developed using the MVVC architecture, along with the Provider and BLoC libraries.
+# JokenPo
 
-## How to Run the Application
+**JokenPo** is a casual game inspired by the classic "Rock, Paper, Scissors," but with a unique twist. The game features additional elements, animations, and modern functionalities. It was developed as a personal project to practice and improve Flutter development skills, focusing on architecture, state management, and animations.
 
-In order to run the app, you need to add the dependencies required by the project. Run the following command:
+## 📖 About the Game
 
-``` bash
-flutter pub get
-```
+JokenPo features six unique elements:
 
-## How to Play
+-   🔥 **Fire**
+-   ⚡ **Lightning**
+-   🪨 **Rock**
+-   ❄️ **Snow**
+-   💧 **Water**
+-   🌬️ **Wind**
 
-To play JOKENPO, simply select your desired action from the list of available options. The app will randomly select an action for the bot. After both you and the bot have made your selections, the app will determine the winner based on the rules of the game.
+Players choose one element, and the bot makes a random choice. The winner is determined based on specific dominance rules between the elements. If the player wins, a special animation is triggered.
 
-## Architecture
+## 🛠️ Technologies Used
 
-The JOKENPO app was developed using the MVVC architecture, which stands for Model, View, View Model, Controller. The Model represents the data and business logic of the app, the View is responsible for the app's user interface, and the View Model acts as a middleman between the Model and the View. The Controller, in this case, is represented by the BLoC (Business Logic Component) library.
+-   **Language:** Dart
+-   **Framework:** Flutter
+-   **Architecture:** MVVM (Model-View-ViewModel)
+-   **State Management:** Provider (using `ChangeNotifier`)
+-   **Animations:** Custom animations for each winning element
 
-## Libraries
+## 🚀 Features
 
-The JOKENPO app uses the following libraries:
+-   Choose from 6 distinct elements.
+-   Real-time score tracking for the player and the bot.
+-   Custom animations displayed when the player wins.
+-   Simple and intuitive user interface.
+-   Built with Clean Code principles and architectural patterns.
+    
 
--   Provider.
--   BLoC.
-
-## Video
-
-Check out the following video to see the JOKENPO app in action:
-
-https://user-images.githubusercontent.com/61123877/235994033-5d0958f3-fad8-4501-bf41-129e11e4b945.mp4
+## 🎮 Screenshots (Optional)
 
 
-I hope you enjoy playing JOKENPO!
+## 📚 License
+
+This project was created for educational purposes and is licensed under the MIT License.
